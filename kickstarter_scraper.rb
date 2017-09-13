@@ -9,9 +9,9 @@ def create_project_hash
   projects =  {}
 
   kickstarter.css("li.project.grid_4").each do |text|
+    title = project.css("h2.bbcard_name strong a").text
     projects[project] = {}
-    
-    
+
   end
 
   projects
@@ -21,7 +21,7 @@ def create_project_hash
   # description: project.css("p.bbcard_blurb").text
   # location: project.css("ul.project-meta span.location-name").text
   # percent_funded: project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
-  
+
 end
 
 create_project_hash
